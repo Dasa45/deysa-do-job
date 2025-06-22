@@ -1,3 +1,4 @@
+import ChatBox from '../components/ChatBox'
 function Chat() {
   const hora = new Date().getHours();
 
@@ -14,6 +15,8 @@ function Chat() {
     <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
       <h1>🤖 {saudacao}, eu sou a Deysa!</h1>
       <p>Tô pronta pra te ajudar no job — só dizer o que precisa!</p>
+
+      <ChatBox />
     </div>
   );
 }
