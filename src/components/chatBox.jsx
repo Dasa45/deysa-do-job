@@ -27,24 +27,24 @@ export default function ChatBox() {
   }
 
   return (
-    <div className="chat-box">
-      <div className="messages">
-        {messages.map((msg, i) => (
-          <div key={i} className={`message ${msg.sender}`}>
-            {msg.text}
-          </div>
-        ))}
-      </div>
-      <div className="input-area">
-        <input
-          type="text"
-          value={input}
-          placeholder="Digite sua pergunta..."
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-        />
-        <button onClick={sendMessage}>Enviar</button>
-      </div>
+    <div className="chat-container">
+     <div className="messages">
+      {messages.map((msg, index) => (
+        <div key={index} className={msg.sender === 'user' ? 'user-message' : 'bot-message'}>
+          {msg.text}
+        </div>
+      ))}
     </div>
-  )
+
+    <form onSubmit={handleSubmit} className="input-area">
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Digite sua mensagem..."
+      />
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+)
 }
