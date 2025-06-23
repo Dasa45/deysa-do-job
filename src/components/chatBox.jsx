@@ -13,10 +13,12 @@ export default function ChatBox() {
 
     setInput('')
 
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: input })
+    const response = await fetch("https://deysa-do-job.vercel.app/api/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ message })
+})
+
     })
 
     const data = await res.json()
