@@ -21,7 +21,7 @@ export default function ChatBox() {
 
     })
 
-    const data = await res.json()
+    const data = await response.json()
     const botMessage = { sender: 'bot', text: data.reply }
     setMessages((prev) => [...prev, botMessage])
   }
